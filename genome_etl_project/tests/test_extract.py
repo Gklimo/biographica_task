@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch, MagicMock
 import os
-from etl.extract import download_gff  # Adjust the import based on your module structure
+from etl.extract import download_gff
 
 class TestDownloadGFF(unittest.TestCase):
 
