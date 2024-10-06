@@ -31,7 +31,7 @@ pip install -r requirements.txt
 CREATE DATABASE ensemblgenomes;
 ```
 
-3. Configurre parameters in `main.py`:
+3. Configurre desired parameters in `main.py`, example provided:
 ```python
 config = {
     "ensembl_version": 59,
