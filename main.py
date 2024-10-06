@@ -49,12 +49,12 @@ if __name__ == "__main__":
     }
 
     # # One-off run of the pipeline
-    run_scheduled_pipeline(config=config, pipeline_name="Genome_ETL")
+    # run_scheduled_pipeline(config=config, pipeline_name="Genome_ETL")
 
-    # # Schedule the pipeline to run every hour
-    # schedule.every().hour.do(run_scheduled_pipeline, config=config, pipeline_name="Genome_ETL")
+    # Schedule the pipeline to run every hour
+    schedule.every().hour.do(run_scheduled_pipeline, config=config, pipeline_name="Genome_ETL")
 
-    # # Keep the scheduler running with polling every 5 minutes
-    # while True:
-    #     schedule.run_pending()
-    #     time.sleep(300)  # Sleep for 300 seconds (5 minutes)
+    # Keep the scheduler running with polling every 5 minutes
+    while True:
+        schedule.run_pending()
+        time.sleep(300)  # Sleep for 300 seconds (5 minutes)
