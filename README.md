@@ -87,7 +87,7 @@ pytest tests/ -v
 
 ### TODO:
 1. **Implement Upserts**:
-   - Modify the loading step to perform upserts to avoid table replacement.
+   - Modify the loading step to perform upserts to avoid full table refresh.
 
 2. **DBT Integration**:
    - Use dbt for managing transformations, validation, and generating data lineage.
@@ -95,14 +95,14 @@ pytest tests/ -v
 3. **Add Metadata Logging**:
    - Track each ETL run with details such as records processed and any errors encountered.
 
-4. **Enhance Error Handling**:
-   - Add retry logic for failed downloads or database operations.
+4. **Airflow/Dagster orchestration**:
+   - For advanced scheduling, monitoring, and error handling.
 
 5. **Expand Testing**:
-   - Implement more integration tests and load unit tests
+   - Implement more unit tests for data load and create integration tests.
 
 6. **Environmental Variables**:
-   - To make the pipeline more configurable and flexible
+   - To make the pipeline more configurable and flexible.
 
 7. **Cloud Deployment**:
-   - Explore deploying the pipeline on cloud platforms like AWS to enable automation
+   - Explore deploying the pipeline on cloud platforms like AWS to enable automation.
