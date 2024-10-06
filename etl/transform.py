@@ -18,7 +18,6 @@ def parse_gff(file_path: str) -> pd.DataFrame:
     # Parse attributes to extract gene_id and gene_name
     gff_data[['gene_id', 'gene_name']] = gff_data['attributes'].apply(lambda x: pd.Series(parse_attributes(x)))
 
-    # Convert columns to string before applying string methods
     gff_data['seqid'] = gff_data['seqid'].astype(str).str.lower().str.strip()
     gff_data['source'] = gff_data['source'].astype(str).str.lower().str.strip()
     gff_data['feature'] = gff_data['feature'].astype(str).str.lower().str.strip()
@@ -27,7 +26,7 @@ def parse_gff(file_path: str) -> pd.DataFrame:
     # Replace NaN in gene_name explicitly with 'unknown'
     gff_data['gene_name'] = gff_data['gene_name'].fillna('unknown').astype(str).str.lower().str.strip()
 
-    # Handle the score column properly: convert '.' to 0 and ensure numeric type
+    # Score column cleanup: convert '.' to 0 and ensure numeric type
     gff_data['score'] = gff_data['score'].replace('.', '0')
     gff_data['score'] = pd.to_numeric(gff_data['score'], errors='coerce').fillna(0)
 
